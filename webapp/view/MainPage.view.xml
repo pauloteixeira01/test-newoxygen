@@ -1,0 +1,44 @@
+<mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  controllerName="my.app.controller.MainPage"
+
+  xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:tnt="sap.tnt"
+>
+  <Shell>
+    <App id="main">
+      <Page title="Meu Projeto">
+        <Text text="Olá Mundo" />
+        <Button
+          icon="sap-icon://sap-ui5"
+          text="Show toast"
+          press=".onPress"
+          type="Emphasized"
+          class="sapUiSmallMargin"
+        />
+        
+        <l:BlockLayout background="Light">
+          <l:BlockLayoutRow>
+            <l:BlockLayoutCell>
+            <Text text="List from JSON" textAlign="Center"/>
+              <FlexBox items="{/features}" justifyContent="Center" wrap="Wrap" class="sapUiSmallMarginBottom">
+                <tnt:InfoLabel text="{}" class="sapUiSmallMarginTop sapUiSmallMarginEnd"/>
+              </FlexBox>
+            </l:BlockLayoutCell>
+          </l:BlockLayoutRow>
+        </l:BlockLayout>
+
+        <content>
+          <Button 
+            id="employeeListBtn" 
+            text="Click here to navigation" 
+            press=".onNavToSecondPage" 
+            class="sapUiTinyMarginEnd"
+          />
+        </content>
+      </Page>
+    </App>
+  </Shell>
+</mvc:View>

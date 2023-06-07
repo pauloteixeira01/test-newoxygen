@@ -1,0 +1,18 @@
+<mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  controllerName="my.app.controller.SecondPage"
+>
+  <App id="second">
+    <Page title="second">
+      <Text text="Second view" />
+
+      <Button
+				icon="sap-icon://sap-ui5"
+				text="Go!"
+				press=".onPress"
+				type="Emphasized"
+				class="sapUiSmallMargin"/>
+    </Page>
+  </App>
+</mvc:View>
