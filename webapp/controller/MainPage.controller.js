@@ -9,19 +9,17 @@ sap.ui.define([
   return Controller.extend("my.app.controller.MainPage", {
 
 		onNavToSecondPage: function (){
-      console.log('CarmellaBing')
-			this.getOwnerComponent().getRouter().navTo("second");
+			this.getOwnerComponent().getRouter().navTo("employeeList");
 		},
 
     onPress : function () {
 			MessageToast.show("Look toast here!");
       this.anyEvent()
-			// this.byId("app").to(this.byId("intro"));
 		},
 
     onInit : function () {
 			this.getView().setModel(new JSONModel({
-					features: [
+					products: [
 						"ReactJS",
 						"React Native",
 						"VueJS",
@@ -40,20 +38,9 @@ sap.ui.define([
 						"Git Flow",
 						"HTML5",
 						"CSS3",
-						"Free and Open Source",
-						"Free and Open Source",
-						"Free and Open Source",
-						"Free and Open Source",
-						"Free and Open Source",
-						"Responsive Across Browsers and Devices"
 					]
 				})
 			);
 		},
-
-    onChange : function (oEvent) {
-			var bState = oEvent.getParameter("state");
-			this.byId("ready").setVisible(bState);
-		}
   });
 })

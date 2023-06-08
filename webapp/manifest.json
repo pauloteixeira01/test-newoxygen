@@ -1,0 +1,50 @@
+{
+  "_version": "1.12.0",
+  
+  "sap.ui5": {
+    "interfaces": ["sap.ui.core.IAsyncContentCreation"],
+    "rootView": {
+      "viewName": "my.app.view.MainPage",
+      "type": "XML",
+      "id": "main",
+      "async": true
+    }, 
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "type": "View",
+        "viewType": "XML",
+        "path": "my.app.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "transition": "show",
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "appHome",
+          "target": "home"
+        },
+        {
+          "pattern": "employees",
+          "name": "employeeList",
+          "target": "employees"
+        }
+      ],
+      "targets": {
+        "home": {
+          "id": "home",
+          "name": "MainPage",
+          "level": 1
+        },
+				"employees": {
+					"id": "employeeList",
+					"path": "my.app.view.employee",
+					"name": "EmployeeList",
+					"level" : 2
+				}
+      }
+    }
+  }
+}

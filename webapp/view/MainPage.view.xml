@@ -2,42 +2,65 @@
   xmlns:mvc="sap.ui.core.mvc"
   xmlns="sap.m"
   controllerName="my.app.controller.MainPage"
-
   xmlns:l="sap.ui.layout"
 	xmlns:core="sap.ui.core"
 	xmlns:tnt="sap.tnt"
 >
   <Shell>
-    <App id="main">
+    <App id="app">
       <Page title="Meu Projeto">
-        <Text text="Olá Mundo" />
-        <Button
-          icon="sap-icon://sap-ui5"
-          text="Show toast"
-          press=".onPress"
-          type="Emphasized"
-          class="sapUiSmallMargin"
-        />
-        
-        <l:BlockLayout background="Light">
-          <l:BlockLayoutRow>
-            <l:BlockLayoutCell>
-            <Text text="List from JSON" textAlign="Center"/>
-              <FlexBox items="{/features}" justifyContent="Center" wrap="Wrap" class="sapUiSmallMarginBottom">
-                <tnt:InfoLabel text="{}" class="sapUiSmallMarginTop sapUiSmallMarginEnd"/>
-              </FlexBox>
-            </l:BlockLayoutCell>
-          </l:BlockLayoutRow>
-        </l:BlockLayout>
+        <FlexBox  justifyContent="SpaceBetween" direction="Column">
+          <FlexBox
+            class="sapUiSmallMarginTop"
+            alignItems="Center"
+            justifyContent="Center"
+            direction="Column"
+          >
+            <Text text="Olá Mundo" />
 
-        <content>
-          <Button 
-            id="employeeListBtn" 
-            text="Click here to navigation" 
-            press=".onNavToSecondPage" 
-            class="sapUiTinyMarginEnd"
-          />
-        </content>
+            <FlexBox
+              width="80%"
+              alignItems="Center"
+              justifyContent="SpaceBetween"           
+            >
+              <Button
+                icon="sap-icon://sap-ui5"
+                text="Show toast"
+                press=".onPress"
+                type="Emphasized"
+                class="sapUiSmallMargin"
+              />
+              <Button id="employeeListBtn" text="Navigation here" press=".onNavToSecondPage" class="sapUiTinyMarginEnd" />           
+            </FlexBox>
+          </FlexBox>
+          
+          <Table id="idProductsTable"
+            inset="false"
+            items="{/products}"
+          >
+            <infoToolbar>
+              <OverflowToolbar>
+                <Label text="Table From JSON"/>
+              </OverflowToolbar>
+            </infoToolbar>
+            <columns>
+              <Column
+                width="100%">
+                <Text text="Products" />
+              </Column>
+            </columns>
+            <items>
+              <ColumnListItem vAlign="Middle">
+                <cells>
+                  <ObjectIdentifier
+                    title="{Name}"
+                    text="{}"/>
+                  <Text text="{}" />               
+                </cells>
+              </ColumnListItem>
+            </items>
+          </Table>
+        </FlexBox> 
       </Page>
     </App>
   </Shell>
