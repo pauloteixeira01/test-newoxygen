@@ -8,7 +8,26 @@
       "type": "XML",
       "id": "main",
       "async": true
-    }, 
+    },
+    
+		"dependencies": {
+			"libs": {
+				"sap.m": {},
+				"sap.ui.table": {}
+			}
+		},
+    
+		"config": {
+			"sample": {
+				"stretch": true,
+				"files": [
+					"employee.EmployeeList.view.xml",
+					"employee.EmployeeList.controller.js",
+					"manifest.json"
+				]
+			}
+		},
+
     "routing": {
       "config": {
         "routerClass": "sap.m.routing.Router",
